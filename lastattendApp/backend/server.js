@@ -1,29 +1,34 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const sequelize = require('sequelize');
-const userRoutes = require('./routes/userRoutes');
-const authMiddleware = require('./middleware/authMiddleware');
+const organizerRoutes = require('./routes/organizerRoutes');
+const { Sequelize } = require('sequelize');
+const Organizer = require('./models/Organizer');
 
 const app = express();
+const PORT = process.env.PORT || 5000;
+
+// Middleware
 app.use(bodyParser.json());
 
-// Connect to the database
-const db = new sequelize('lastattend', 'root', 'root', {
+// Initialize Sequelize and connect to the database
+const sequelize = new Sequelize('lastattend', 'root', 'root', {
   host: 'db',
+  port: 3306,
   dialect: 'mysql',
-  port: 3306
+  logging: false,
 });
 
-db.authenticate()
+sequelize.authenticate()
   .then(() => console.log('Database connected...'))
   .catch(err => console.log('Error: ' + err));
 
-// Use routes
-app.use('/api', userRoutes);
+// Initialize models
+Organizer.init(sequelize);
 
-// Protect routes with authentication middleware
-app.use(authMiddleware);
+// Routes
+app.use(organizerRoutes);
 
 // Start the server
-const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
+});
