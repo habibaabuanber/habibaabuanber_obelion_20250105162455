@@ -1,4 +1,4 @@
-js
+
 const { Model, DataTypes, Sequelize } = require('sequelize');
 
 class Attendee extends Model {
