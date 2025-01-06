@@ -55,7 +55,9 @@ class User extends Model {
     }, {
       sequelize,
       modelName: 'User',
-      timestamps: false,
+      timestamps: true,  // Enable automatic creation of `createdAt` and `updatedAt`
+      createdAt: 'createdAt', // Default name for created timestamp
+      updatedAt: 'updatedAt', // Default name for updated timestamp
       hooks: {
         beforeCreate: async (user) => {
           const salt = await bcrypt.genSalt(10);
