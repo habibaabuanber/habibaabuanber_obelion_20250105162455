@@ -8,30 +8,20 @@ const transporter = nodemailer.createTransport({
   },
 });
 
-/**
- * Send an email to the organizer
- * @param {string} to - The recipient's email address
- * @param {string} subject - The subject of the email
- * @param {string} text - The plain text body of the email
- * @param {string} html - The HTML body of the email
- */
-const sendEmail = async (to, subject, text, html) => {
+const sendEmail = async (to, subject, text) => {
   const mailOptions = {
     from: process.env.EMAIL_USER,
     to,
     subject,
     text,
-    html,
   };
 
   try {
     await transporter.sendMail(mailOptions);
-    console.log(`Email sent to ${to}`);
+    return { success: true, message: 'Email sent successfully' };
   } catch (error) {
-    console.error('Error sending email:', error);
+    return { success: false, message: 'Failed to send email', error };
   }
 };
 
-module.exports = {
-  sendEmail,
-};
+module.exports = { sendEmail };

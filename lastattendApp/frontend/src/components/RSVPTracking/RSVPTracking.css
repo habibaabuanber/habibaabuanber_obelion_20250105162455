@@ -1,0 +1,68 @@
+.rsvp-tracking {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 25px;
+  background-color: #f5f5f5;
+  border-radius: 10px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+}
+
+.rsvp-tracking h1 {
+  text-align: center;
+  margin-bottom: 25px;
+  color: #444;
+  font-size: 1.8em;
+}
+
+.rsvp-tracking input[type="text"],
+.rsvp-tracking input[type="email"],
+.rsvp-tracking input[type="tel"] {
+  width: calc(100% - 24px);
+  padding: 12px;
+  margin-right: 12px;
+  margin-bottom: 12px;
+  border: 1px solid #bbb;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.rsvp-tracking button {
+  padding: 12px 18px;
+  background-color: #28a745;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.rsvp-tracking button:hover {
+  background-color: #218838;
+}
+
+.rsvp-tracking ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.rsvp-tracking ul li {
+  padding: 12px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 8px;
+  color: #666;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.rsvp-tracking ul li button {
+  margin-left: 10px;
+  background-color: #007bff;
+  transition: background-color 0.3s ease;
+}
+
+.rsvp-tracking ul li button:hover {
+  background-color: #0056b3;
+}

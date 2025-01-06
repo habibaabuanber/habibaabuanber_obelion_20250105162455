@@ -1,0 +1,61 @@
+.add-attendee {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.add-attendee h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.add-attendee div {
+  margin-bottom: 15px;
+}
+
+.add-attendee input[type="text"],
+.add-attendee input[type="file"] {
+  width: calc(100% - 20px);
+  padding: 10px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.add-attendee input[type="file"] {
+  margin-right: 0;
+}
+
+.add-attendee button {
+  padding: 10px 15px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.add-attendee button:hover {
+  background-color: #0056b3;
+}
+
+.add-attendee ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.add-attendee ul li {
+  padding: 10px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-bottom: 5px;
+  color: #555;
+}

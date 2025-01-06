@@ -9,14 +9,15 @@
     },
     "dependencies": {
         "react": "latest",
-        "react-dom": "latest",
-        "react-router-dom": "latest",
         "axios": "latest",
+        "react-router-dom": "latest",
+        "react-dom": "latest",
         "redux": "latest"
     },
     "devDependencies": {
-        "react": "latest",
+        "axios": "0.21.1",
         "eslint": "latest",
+        "react": "latest",
         "webpack": "latest"
     },
     "browserslist": {
