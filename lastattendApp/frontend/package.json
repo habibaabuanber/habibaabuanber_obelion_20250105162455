@@ -1,0 +1,35 @@
+{
+    "name": "frontend-code",
+    "version": "0.0.0",
+    "scripts": {
+        "start": "react-scripts start",
+        "build": "react-scripts build",
+        "test": "jest",
+        "client": "npm run --prefix client start"
+    },
+    "dependencies": {
+        "react": "latest",
+        "axios": "latest",
+        "react-router-dom": "latest",
+        "react-dom": "latest",
+        "redux": "latest"
+    },
+    "devDependencies": {
+        "axios": "0.21.1",
+        "eslint": "latest",
+        "react": "latest",
+        "webpack": "latest"
+    },
+    "browserslist": {
+        "production": [
+            ">0.2%",
+            "not dead",
+            "not op_mini all"
+        ],
+        "development": [
+            "last 1 chrome version",
+            "last 1 firefox version",
+            "last 1 safari version"
+        ]
+    }
+}
