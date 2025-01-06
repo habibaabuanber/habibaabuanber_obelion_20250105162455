@@ -1,5 +1,5 @@
 module.exports = {
-  up: (queryInterface, Sequelize) => queryInterface.bulkInsert('Users', [
+  up: (queryInterface, Sequelize) => queryInterface.bulkInsert('User', [
     {
       firstName: 'John',
       familyName: 'Doe',
@@ -15,5 +15,5 @@ module.exports = {
       password: 'hashedPassword2'
     }
   ]),
-  down: (queryInterface, Sequelize) => queryInterface.bulkDelete('Users', null, {})
+  down: (queryInterface, Sequelize) => queryInterface.bulkDelete('User', null, {})
 };
