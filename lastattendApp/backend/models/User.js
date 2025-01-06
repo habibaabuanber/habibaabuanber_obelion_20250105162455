@@ -7,8 +7,13 @@ const sequelize = new Sequelize('lastattend', 'root', 'root', {
 const bcrypt = require('bcrypt');
 
 class User extends Model {
-  static init(sequelize) {
-    super.init({
+  static async validatePassword(plainTextPassword, hashedPassword) {
+    return await bcrypt.compare(plainTextPassword, hashedPassword);
+  }
+}
+
+// Initialize the User model
+User.init(
       id: {
         type: DataTypes.INTEGER,
         autoIncrement: true,
@@ -54,22 +59,15 @@ class User extends Model {
       }
     }, {
       sequelize,
-      modelName: 'User',
-      timestamps: true,  // Enable automatic creation of `createdAt` and `updatedAt`
-      createdAt: 'createdAt', // Default name for created timestamp
-      updatedAt: 'updatedAt', // Default name for updated timestamp
-      hooks: {
-        beforeCreate: async (user) => {
-          const salt = await bcrypt.genSalt(10);
-          user.password = await bcrypt.hash(user.password, salt);
-        }
-      }
-    });
+    modelName: 'User',
+    timestamps: true, // Enable automatic creation of `createdAt` and `updatedAt`
+    hooks: {
+      beforeCreate: async (user) => {
+        const salt = await bcrypt.genSalt(10);
+        user.password = await bcrypt.hash(user.password, salt);
+      },
+    },
   }
-
-  static async validatePassword(plainTextPassword, hashedPassword) {
-    return await bcrypt.compare(plainTextPassword, hashedPassword);
-  }
-}
+);
 
 module.exports = User;
